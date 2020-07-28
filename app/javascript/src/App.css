@@ -1,0 +1,463 @@
+.App {
+  text-align: center;
+  margin-top: 4%;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+  /* background-image: url('./bp.jpg'); */
+
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    /* background-image: '../public/bp.npg'; */
+
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.body{
+  background-color: #3498db;
+  background-image: '../public/bp.npg';
+}
+ 
+.bp{
+  width: 100%;
+  height: 100vh;
+  opacity: 1;
+  overflow: hidden;
+
+}
+/* NavBar  */
+.navDiv{
+  width: 100%;
+  height: 50px;
+  background-color: brown;
+}
+
+.navCLass{
+  width: 8.2%;
+  text-align: center;
+  float: left;
+  /* background-color:greenyellow; */
+  height: 90%;
+  margin: 1%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  font-size: x-large;}
+
+/* shopping cart item  */
+.shopItemNum{
+  background-color:greenyellow;
+  font-size: x-large;
+}
+
+.navCLassFilter{
+  width: 22%;
+  text-align: center;
+  float: left;
+  margin-top: 1%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  /* font-size: x-large; */
+}
+
+.navBarLogin{
+  width: 14%;
+  text-align: center;
+  float: left;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
+  font-size: large;
+}
+
+/* loginForm */
+.salut{
+  text-align: center;
+  margin-top: 15%;
+  margin-left: 15%;
+}
+.salut1{
+  text-align: center;
+  margin-top: 15%;
+  /* margin-left: 1%; */
+}
+.warning{
+  height: 25px;
+  /* margin-left: 0%; */
+  margin-top: 10%;                   
+}
+
+.formLogin{
+  margin-left: 30%;
+  background-color: #3498db;
+  width: 40%;
+}
+
+.loginDiv{
+  padding-left: 30%;
+  padding-bottom: 15%;
+  width: 80%;
+}
+.loginInput{
+  /* padding-left: 30%; */
+  padding-bottom: 50%;
+  width: 100%;
+}
+
+.warning{
+  height: 50px;
+  padding-left: 40%;
+}
+.navBar{
+  margin-top: 1px;
+  height: 50px;
+  font-family: "Oswald", sans-serif;
+  background-color:orange;
+  text-decoration: none;
+  padding: 2em;
+
+}
+
+.logo {
+  padding-top: 1%;
+  text-align: center;
+  background-color: aliceblue;
+  height: 50px;
+  width: 12%;
+  margin: 2px;
+  float: left;
+}
+.logoI {
+  padding-top: 0%;
+  text-align: auto;
+  background-color: aliceblue;
+  height: 40px;
+  width: 90%;
+  margin: 2px;
+  float: left;
+}
+
+.navBarComponent {
+  padding: 1em;
+  font-size: 30px
+}
+
+.postImg {
+  height: 150px;
+  width: 200px;
+  align-items: center;
+}
+
+.searchBar {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+  height: 30px;
+  background-color: peru;
+}
+
+.postStyle {
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 3px;
+}
+.CommentDeleteButoon{
+  background-color: orangered;
+}
+
+.likeButton {
+  background-color: red; /* Green */
+  border: none;
+  color: black;
+  padding: 10px 10px;
+  text-align: right;
+  text-decoration: none;
+  display: flex;
+  font-size: 16px;
+}
+
+/* *********** user card  */
+
+.userCardDiv{
+     -moz-border-radius: 6px;
+     -webkit-border-radius: 6px;
+     background-color: #f0f7fb;
+     border: solid 1px #3498db;
+     border-radius: 6px;
+     line-height: 18px;
+     overflow: hidden;
+     padding: 2px;
+     width: 30%;
+     height: 450px;
+     float: left;
+     text-align: center;
+     margin-left: 2%;
+     margin-top: 20px;
+     font-family: "Oswald", sans-serif;
+     font-size: 20px;
+}
+
+.itemImage{
+  width: 400px;
+  height: 250px;
+}
+
+
+/* login */
+
+.divLogin{
+  background-color: orangered;
+  padding-left: 30%;
+  width: 60%;
+  height: 50%;
+  padding-top: 50%;
+  padding-left: 20%;
+}
+
+
+
+.formInput{
+  height: 25px;
+  width: 250px;
+  /* padding-top: 5%; */
+}
+
+.loginSubmit{
+  padding-top: 10%;
+}
+
+
+/* shopping cart  */
+.shopppingCardCardDiv{
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  line-height: 18px;
+  overflow: auto;
+  padding: 2px;
+  width: 30%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  margin-left: 2%;
+  margin-top: 20px;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  position: fixed;
+  /* background-color: red; */
+  /* top: 5%; */
+}
+.shopppingCardCardDiv1{
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  line-height: 18px;
+  overflow: auto;
+  padding: 2px;
+  width: 30%;
+  height: 100%;
+  float: right;
+  text-align: center;
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-top: 20px;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+  /* position: absolute; */
+  /* background-color:white; */
+  /* top: 5%; */
+}
+
+.shopppingCarditem{
+  
+  background-color: #f0f7fb;
+  border: solid 1px #3498db;
+  border-radius: 6px;
+  line-height: 18px;
+  overflow: hidden;
+  padding: 2px;
+  width: 100%;
+  height: 200px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+.shopppingCardImg{
+  width: 20%;
+  height: 50px;
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  font-size: 20px;
+}
+
+/* profile  */
+.profileImage{
+  width: 400px;
+  height: 400px;
+}
+
+
+/*  checkout  */
+
+.checkoutDivBody{
+  background-color: white;
+  color: black;
+}
+.checkoutDivBodyP{
+  color: black;
+}
+
+/* sell item  */
+
+.sellItemDiv{
+  margin-top: 1%;
+  margin-left: 10%;
+  height: 98vh;
+}
+
+.sellItemDivInput{
+  width: 80%;
+  margin-top: 5%;
+}  
+
+/* showsignle item  */
+
+.singleButtonSized{
+  width:9em;
+  margin: 3px;
+} 
+
+.editItemForm{
+  margin-left: 34%;
+  margin-bottom: 15%;
+  width: 30%;
+  /* height: 0%; */
+  background-color: red;
+}
+
+.editItemFormDiv{
+  margin-left: 10%;
+  margin-top: 2%;
+  margin-bottom: 5%;
+  width: 80%;
+  /* height: 0%; */
+  /* background-color: blue; */
+}
+.singleItemMainDiv{
+  margin-top: 6%;
+  margin-bottom: 1%;
+  /* height: 600px; */
+}
+
+/* Summary  */
+.summaryDiv{
+  width: 45%;
+  min-height:100vh;
+  background-color: #4CAF50;
+  float: left;
+  margin: 1.5%;
+}
+.offerFormInput{
+  margin-left: 30%;
+  /* margin-bottom: 15%; */
+}
+.summaryDivOffers{
+  width: 45%;
+  min-height:80vh;
+  background-color: #3498db;
+  float: left;
+  margin: 1.5%;
+}
+.summarySoldDiv{
+  background-color: white;
+  margin-left: 20%;
+  margin-bottom: 2px;
+  height: 10%;
+  width: 60%;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+}
+.offerElementDiv{
+  background-color: white;
+  margin-left: 20%;
+  margin-bottom: 2px;
+  height: 10%;
+  width: 60%;
+  border-style: solid;
+  border-color: black;
+  border-width: 3px;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  max-height: 60%
+}
+img:hover {
+  transform: scaleX(-1);
+}
+/* div {
+  resize: both;
+  overflow: auto;
+} */ 
+
+.navCLass:hover {
+  transform: scale(1.5);
+
+  background-color: #f0f7fb   
+} 
+
+body {
+  background-image: url(./bp3.jpg);
+  /* position: fixed; */
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  /* background-repeat: repeat; */
+  -moz-background-size:cover;
+}
+
