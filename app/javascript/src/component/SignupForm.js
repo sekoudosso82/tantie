@@ -24,14 +24,16 @@ class SignupForm extends React.Component {
     if (this.state.password === this.state.passwordConfirmation){
 
       axios.post("/api/v1/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify({username: this.state.username, 
-                              password: this.state.password,
-                             })
+        // method: "POST",
+        // headers: {
+        //   "Content-Type": "application/json",
+        //   "Accept": "application/json"
+        // },
+        // body: JSON.stringify({username: this.state.username, 
+        //                       password: this.state.password,
+        //                      })
+        username: this.state.username, 
+        password: this.state.password,
       })
       // .then(res => res.json())
       .then(response => {
@@ -43,31 +45,22 @@ class SignupForm extends React.Component {
           this.props.setUser(response)
           let shop = {user_id: response.user.id}
 // create shoppingCart({shoppingCartId: response.user.id})
-axios.post("http://localhost:3000/api/v1/shopping_carts", {
-          method: 'Post',
-          headers: {"Content-Type": "application/json",
-                    "Accept": "application/json"},    
-          body: JSON.stringify({user_id: response.user.id})
+          axios.post("/api/v1/shopping_carts", {
+            user_id: response.user.id
           })
-          // .then(resp=>resp.json())
           .then(data => console.log('shopping cart created',data))
+          .catch(error => console.log(error))
 // create watchlist
-axios.post("/api/v1/watchlists", {
-            method: 'Post',
-            headers: {"Content-Type": "application/json",
-                      "Accept": "application/json"},    
-            body: JSON.stringify(shop)
-            })
-            // .then(resp=>resp.json())
-            .then(data => console.log('watchlist cart created',data))
-
-            
+          axios.post("/api/v1/watchlists", {
+            user_id: response.user.id
+          })
+          .then(data => console.log('watchlist cart created',data))
+          .catch(error => console.log(error))
           }
           
         })
-        
-        
-        
+        .catch(error => console.log(error))
+          
       } else {
         alert("Passwords don't match! check for case_sensitive Password should be atlease 3 characters")
       }

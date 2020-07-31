@@ -26,7 +26,7 @@ class ShowSingleItem extends Component{
     componentDidMount(){
         let { id } = this.props.match.params;              
         axios.get(`/api/v1/items/${id}`)
-        .then(res => res.json())
+        // .then(res => res.json())
         .then(targetItem => this.setState({targetItem,
             title: targetItem.title,     
             price: targetItem.price,
@@ -35,6 +35,7 @@ class ShowSingleItem extends Component{
             category: targetItem.category,   
             imgUrl:targetItem.imgUrl
         }))
+
     }
 
     handleAddToCart = () => {
@@ -48,10 +49,13 @@ class ShowSingleItem extends Component{
             console.log('item_id', parseInt(id))
           console.log('** shopping cart post', data)
           axios.post(`/api/v1/shopping_cart_items`, {
-            method: 'Post',
-            headers: {"Content-Type": "application/json",
-                      "Accept": "application/json"},    
-            body: JSON.stringify(data)
+            // method: 'Post',
+            // headers: {"Content-Type": "application/json",
+            //           "Accept": "application/json"},    
+            // body: JSON.stringify(data)
+            shopping_cart_id: this.props.userId, 
+            item_id: parseInt(id)
+
         })
         // .then(resp=>resp.json())
         .then(data =>  {
@@ -61,7 +65,9 @@ class ShowSingleItem extends Component{
             //     alert('Successfully added to shopping cart')}
                 console.log('GOT FROM BACKEND AFTER POST', data)
                 this.props.updateShopItem(data)
-        })  
+        })
+        .catch(error => console.log(error))
+ 
     }
     handleAddToWatchlist = () => {
         let { id } = this.props.match.params; 
@@ -73,10 +79,12 @@ class ShowSingleItem extends Component{
         console.log('item_id', parseInt(id))
         console.log('** watchlist post', data)
         axios.post("/api/v1/watchlist_items", {
-            method: 'Post',
-            headers: {"Content-Type": "application/json",
-                      "Accept": "application/json"},    
-            body: JSON.stringify(data)
+            // method: 'Post',
+            // headers: {"Content-Type": "application/json",
+            //           "Accept": "application/json"},    
+            // body: JSON.stringify(data)
+            watchlist_id: this.props.userId, 
+            item_id: parseInt(id)
         })
         // .then(resp=>resp.json())
         .then(data => {
@@ -85,7 +93,9 @@ class ShowSingleItem extends Component{
             // else {
             //     alert('Successfully added to watchlist')}
                 this.props.addWatchlist(data)
-        }) 
+        })
+        .catch(error => console.log(error))
+ 
     }
 
     handleMakeOffer = (event) => {
@@ -100,13 +110,15 @@ class ShowSingleItem extends Component{
           } 
           console.log('offer  data  ', data)
 
-          axios.post("/api/v1/offers", {
-            method: 'Post',
-            headers: {"Content-Type": "application/json",
-                      "Accept": "application/json"},    
-            body: JSON.stringify(data)
+        axios.post("/api/v1/offers", {
+            // method: 'Post',
+            // headers: {"Content-Type": "application/json",
+            //           "Accept": "application/json"},    
+            // body: JSON.stringify(data)
+            item_id: parseInt(id),
+            amount: this.state.price
         })
-        .then(resp=>resp.json())
+        // .then(resp=>resp.json())
         .then(data1 => {
             console.log('offer posted data ', data1)
             if(data1.errors){
@@ -114,8 +126,9 @@ class ShowSingleItem extends Component{
             // else {
             //     alert('Offer send Successfully')}
                 this.props.addOffer(data1)
-
         }) 
+        .catch(error => console.log(error))
+
         this.setState({targetItem: {},
             editItem: false,
             makeOffer: false,

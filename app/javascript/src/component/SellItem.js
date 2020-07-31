@@ -33,10 +33,18 @@ class SellItem extends Component {
     }
 
     axios.post('/api/v1/items', {
-        method: "POST",
-        headers: {"Content-Type": "application/json",
-        "Accept": "application/json"},    
-        body: JSON.stringify(data)
+        // method: "POST",
+        // headers: {"Content-Type": "application/json",
+        // "Accept": "application/json"},    
+        // body: JSON.stringify(data)
+        user_id: this.props.userId, 
+        title: this.state.title,
+        price: this.state.price,
+        location: this.state.location,
+        condition: this.state.condition,
+        category: this.state.category,
+        offer: this.state.offer,
+        imgUrl: this.state.imgUrl,
     })
 
     // .then(resp=>resp.json())
@@ -50,6 +58,8 @@ class SellItem extends Component {
             alert('new selling item add Successfully')}
         this.props.sellNewItem(data)
     })
+    .catch(error => console.log(error))
+
 
     this.setState({
       title: '',price: '',location: '',

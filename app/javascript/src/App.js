@@ -23,10 +23,8 @@ class  App extends Component {
     const token = localStorage.token
     
     if(token){
-      axios.get("api/v1/auto_login", {
-        headers: { "Authorization": token }
-      })
-      .then(res => res.json())
+      axios.get("api/v1/auto_login")
+      // .then(res => res.json())
       .then(response => {
         if (response.errors){
           alert(response.errors)
